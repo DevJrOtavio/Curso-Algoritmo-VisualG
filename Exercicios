@@ -1,0 +1,179 @@
+Algoritmo "MENU OPÇÕES"
+// Disciplina   : [Linguagem e Lógica de Programação(CURSO EM VIDEO]
+// Professor   : GUANABARA
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : OTAVIO
+// Data atual  : 21/10/2022
+Var
+ OPC, CONT, TAB, N1, N2, KG, TS, SM, SF, ID, ID17, ID18:INTEIRO
+ IMC, AT, PV1, TB1, NT:REAL
+ RESP,NM, SX:CARACTER
+
+Inicio
+REPITA
+ESCREVAL("|=======================|")
+ESCREVAL("|        MENU           |")
+ESCREVAL("|=======================|")
+ESCREVAL("|[1] PARA TABUADA       |")
+ESCREVAL("|[2] PARA CONTAGEM      |")
+ESCREVAL("|[3] PARA IMC           |")
+ESCREVAL("|[4] APROVEITAMENTO NOTA|")
+ESCREVAL("|[5] REGISTRAR PESSOAS  |")
+ESCREVAL("|[6]       SAIR         |")
+ESCREVAL("|=======================|")
+LEIA(OPC)
+
+ESCOLHA OPC
+       CASO 1
+          REPITA
+            ESCREVAL("QUAL NÚMERO DA TAUBADA: ")
+            LEIA(TAB)
+            CONT<-0
+                   REPITA
+                         CONT<-CONT+1
+                         N1<-TAB*CONT
+
+                         ESCREVAL(TAB, " X",CONT, " =",N1)
+                   ATE (CONT = 10)
+                ESCREVA("DESEJA CONTINUAR [S/N]")
+                LEIA(RESP)
+           ATE (RESP = "N")
+       CASO 2
+            REPITA
+                  ESCREVA("ATÉ QUANTOS DESEJA CONTAR: ")
+                  LEIA(N2)
+                  CONT<-0
+                          REPITA
+                                CONT<-CONT+1
+                                ESCREVA(CONT)
+                          ATE (CONT = N2)
+                  ESCREVAL()
+                  ESCREVAL("DESEJA CONTINUAR?")
+                  ESCREVAL(" [S] PARA SIM")
+                  ESCREVAL(" [N] PARA NÃO")
+
+                  LEIA(RESP)
+           ATE (RESP = "N")
+       CASO 3
+            REPITA
+                  ESCREVAL(" INDICE DE MASSA CORPORAL")
+                  ESCREVA("QUAL SUA AlTURA: ")
+                  LEIA(AT)
+                  ESCREVA("QUAL SEU PESO EM KG: ")
+                  LEIA(KG)
+                  IMC<- (KG/AT^2)
+                  
+                    ESCREVAL(" SEU IMC É DE ", IMC:4:1)
+                    ESCREVAL("======================")
+                    ESCREVAL("   INDICE COMPORAL    ")
+                    ESCREVAL("======================")
+
+                    SE IMC < 17 ENTAO
+                         ESCREVAL("VOCÊ ESTA COM PESO MUITO ABAIXO")
+                    SENAO
+                          SE (IMC >= 17) E ( IMC <= 18.5) ENTAO
+                             ESCREVAL("VOCÊ ESTÁ COM PESO ABAIXO")
+                          SENAO
+                                SE (IMC >= 18.5) E (IMC <= 25)  ENTAO
+                                     ESCREVAL("VOCÊ ESTÁ COM O PESO IDEAL")
+                                SENAO
+                                       SE (IMC >= 25.1) E (IMC <= 30)  ENTAO
+                                            ESCREVAL("VOCÊ ESTÁ COM SOBREPESO")
+                                       SENAO
+                                              SE (IMC >=30.1) E (IMC <= 35)   ENTAO
+                                                 ESCREVAL("VOCÊ ESTÁ COM OBESIDADE")
+                                              SENAO
+                                                     SE (IMC >= 35.1) E (IMC <= 40)  ENTAO
+                                                        ESCREVAL("VOCÊ ESTÁ COM OBESIDADE SEVERA")
+                                                    SENAO
+                                                       ESCREVAL("VOCÊ ESTÁ COM OBESIDADE MORBIDA")
+                                                    FIMSE
+                                             FIMSE
+                                      FIMSE
+                                 FIMSE
+                           FIMSE
+                    FIMSE
+                  ESCREVAL()
+                  ESCREVAL("DESEJA CONTINUAR?")
+                  ESCREVAL(" [S] PARA SIM")
+                  ESCREVAL(" [N] PARA NÃO")
+                  LEIA(RESP)
+            ATE  (RESP = "N")
+        CASO 4
+             REPITA
+                   ESCREVAL("======================")
+                   ESCREVAL(" APROVEITAMENTO DE NOTA")
+                   ESCREVAL("======================")
+                   ESCREVA("QUAL VALOR DA PROVA: ")
+                   LEIA(PV1)
+                   ESCREVA("QUAL VALOR DO TRABALHO: ")
+                   LEIA(TB1)
+                   
+                   NT<-(PV1+TB1)/2
+
+                   ESCOLHA NT
+                           CASO 10, 9
+                                ESCREVAL("APROVEITAMENTO A COM ",NT," MÉDIA")
+                           CASO 8, 7
+                                ESCREVAL("APROVEITAMENTO B COM ",NT," MÉDIA")
+                           CASO 6, 5
+                                ESCREVAL("APROVEITAMENTO C COM ",NT," MÉDIA")
+                           CASO 4, 3
+                                ESCREVAL("APROVEITAMENTO D COM ",NT," MÉDIA")
+                           CASO 2, 1
+                                ESCREVAL("APROVEITAMENTO E COM ",NT," MÉDIA")
+                           CASO 0
+                                ESCREVAL("APROVEITAMENTO F COM ",NT," MÉDIA")
+                   FIMESCOLHA
+             
+                  ESCREVAL()
+                  ESCREVAL("DESEJA CONTINUAR?")
+                  ESCREVAL(" [S] PARA SIM")
+                  ESCREVAL(" [N] PARA NÃO")
+                  LEIA(RESP)
+            ATE  (RESP = "N")
+            
+         CASO 5
+              REPITA
+                    ESCREVAL("======================")
+                    ESCREVAL("CADASTRAMENTO DE PESSOAS")
+                    ESCREVAL("======================")
+                    ESCREVAL()
+                    ESCREVA("NOME: ")
+                    LEIA(NM)
+                    ESCREVA("IDADE: ")
+                    LEIA(ID)
+                    ESCREVA("SEXO [M/F]")
+                    LEIA(SX)
+                            SE (SX = "M") ENTAO
+                               SM<-SM+1
+                            SENAO
+                                 SE (SX = "F") ENTAO
+                                    SF<-SF+1
+                                 FIMSE
+                            FIMSE
+                                 SE (ID <= 17) ENTAO
+                                    ID17<-ID17+1
+                                 SENAO
+                                      SE (ID >= 18)  ENTAO
+                                         ID18<-ID18+1
+                                      FIMSE
+                                 FIMSE
+                    TS<-SM+SF
+                    
+
+                    
+                  ESCREVAL()
+                  ESCREVAL("DESEJA CONTINUAR?")
+                  ESCREVAL(" [S] PARA SIM")
+                  ESCREVAL(" [N] PARA NÃO")
+                  LEIA(RESP)
+              ATE  (RESP = "N")
+              
+              ESCREVAL("TEMOS NO TOTAL ", TS," PESSOAS, SENDO QUE ",ID17," TEM MENOS DE 18, E",ID18," MAIOR QUE 18")
+
+         OUTROCASO
+
+FIMESCOLHA
+ATE (RESP = 6)
+Fimalgoritmo
